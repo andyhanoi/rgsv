@@ -1,0 +1,24 @@
+<!doctype html><meta charset="utf-8">
+<html>
+	<title>RGSV - AI to speak whatever you type</title>
+	<body>
+		<center>
+		<img src="https://shorturl.at/ZkTd5" width="70px">
+		<h3 style="font-family:'Segoe UI'; color:#324678;" >Type → Click → Browser speaks</h3>	
+		<textarea id="textInput" rows="6" cols="60">Welcome to Reigate Grammar School Vietnam</textarea>
+		<br>
+		<button id="btnSpeak">Speak</button> &nbsp;
+		<button id="stop">Stop</button>
+		</center>
+		<script>
+			const utter = new SpeechSynthesisUtterance();
+
+			btnSpeak.onclick = () => { 
+				utter.text = textInput.value; 				 
+				speechSynthesis.speak(utter); 
+			};
+
+			stop.onclick = () => speechSynthesis.cancel();
+		</script>
+	</body>
+</html>
